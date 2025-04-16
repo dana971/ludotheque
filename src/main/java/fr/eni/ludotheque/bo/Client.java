@@ -3,16 +3,17 @@ package fr.eni.ludotheque.bo;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 @Data
 @NoArgsConstructor
 @RequiredArgsConstructor
 @Entity
 @Table(name = "CLIENT")
 public class Client {
-    @Getter
-    @Setter
+
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @NonNull
@@ -30,6 +31,10 @@ public class Client {
     @NonNull
     @Column(unique = true, length = 10, nullable = false)
     private String no_telephone;
+
+    @OneToMany(cascade = CascadeType.ALL, fetch=FetchType.EAGER, orphanRemoval = true)
+    @JoinColumn(name="id")
+    private List<Adresse> adresses;
 
     public @NonNull String getNom() {
         return nom;
