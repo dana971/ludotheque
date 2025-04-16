@@ -1,13 +1,11 @@
 package fr.eni.ludotheque.bo;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 
 @Data
 @NoArgsConstructor
+@RequiredArgsConstructor
 @Entity
 @Table(name = "CLIENT")
 public class Client {
@@ -18,15 +16,19 @@ public class Client {
     private Integer id;
 
     @NonNull
+    @Column(length = 50, nullable = false)
     private String nom;
 
     @NonNull
+    @Column(length = 50, nullable = false)
     private String prenom;
 
     @NonNull
+    @Column(unique = true, nullable = false)
     private String email;
 
     @NonNull
+    @Column(unique = true, length = 10, nullable = false)
     private String no_telephone;
 
     public @NonNull String getNom() {
