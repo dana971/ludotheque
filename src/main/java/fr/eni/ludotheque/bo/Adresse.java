@@ -1,11 +1,11 @@
 package fr.eni.ludotheque.bo;
 
 import jakarta.persistence.*;
-import lombok.Data;
-import lombok.Getter;
-import lombok.NonNull;
-import lombok.Setter;
+import lombok.*;
 
+@Data
+@NoArgsConstructor
+@RequiredArgsConstructor
 @Entity
 @Table(name = "ADDRESSE")
 public class Adresse {
