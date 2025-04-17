@@ -30,14 +30,6 @@ public class Adresse {
     @Column(length = 50, nullable = false)
     private String ville;
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
     public @NonNull String getRue() {
         return rue;
     }
