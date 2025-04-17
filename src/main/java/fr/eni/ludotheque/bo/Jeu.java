@@ -16,7 +16,7 @@ public class Jeu {
 
     @Id
     @GeneratedValue
-    private Long id;
+    private int id;
     @NonNull
     private String titre;
     @NonNull
@@ -27,11 +27,11 @@ public class Jeu {
     @NonNull
     private Integer tarifJour;
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
