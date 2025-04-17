@@ -17,7 +17,7 @@ import java.util.List;
 public class Jeu {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @NonNull

@@ -1,6 +1,5 @@
 package fr.eni.ludotheque.dal;
 
-import fr.eni.ludotheque.bo.Client;
 import fr.eni.ludotheque.bo.Jeu;
 import org.springframework.data.jpa.repository.JpaRepository;
 

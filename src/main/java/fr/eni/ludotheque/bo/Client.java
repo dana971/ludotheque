@@ -32,8 +32,11 @@ public class Client {
     @Column(unique = true, length = 10, nullable = false)
     private String no_telephone;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
-    @JoinColumn(name = "client_id") // <- clé étrangère dans Adresse pointant vers Client
-    private List<Adresse> adresses;
+    @NonNull
+    @OneToOne(cascade = CascadeType.ALL,
+            orphanRemoval = true, optional = false,
+            fetch = FetchType.EAGER)
+    @JoinColumn(name = "client_id")
+    private Adresse adresse;
 
 }
