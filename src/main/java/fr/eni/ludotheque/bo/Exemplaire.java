@@ -23,7 +23,7 @@ public class Exemplaire {
     @NonNull private boolean louable;
 
     @ManyToOne
-    @JoinColumn(name="id", referencedColumnName = "id")
+    @JoinColumn(name="jeu_id")
     private Jeu jeu;
 
 }

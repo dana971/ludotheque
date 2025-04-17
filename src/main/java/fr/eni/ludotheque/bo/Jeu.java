@@ -17,7 +17,7 @@ import java.util.List;
 public class Jeu {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @NonNull
@@ -43,8 +43,8 @@ public class Jeu {
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "JEUX_GENRES",
-            joinColumns = @JoinColumn(name="id"),
-            inverseJoinColumns = @JoinColumn(name="id"))
+            joinColumns = @JoinColumn(name="jeu_id"),
+            inverseJoinColumns = @JoinColumn(name="genre_id"))
     private List<Genre> genre = new ArrayList<>();
 
     public int getId() {
