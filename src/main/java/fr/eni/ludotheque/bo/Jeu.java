@@ -1,9 +1,6 @@
 package fr.eni.ludotheque.bo;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
@@ -17,14 +14,26 @@ public class Jeu {
     @Id
     @GeneratedValue
     private int id;
+
     @NonNull
+    @Column(nullable = false, length = 50)
     private String titre;
+
     @NonNull
+    @Column(nullable = false, length = 13, unique = true)
     private String reference;
+
+    @Column(nullable = true)
     private Integer ageMin;
+
+    @Column(nullable = true, length = 150)
     private String description;
+
+    @Column(nullable = true)
     private Integer duree;
+
     @NonNull
+    @Column(name = "tarif_jour", nullable = false)
     private Integer tarifJour;
 
     public int getId() {
