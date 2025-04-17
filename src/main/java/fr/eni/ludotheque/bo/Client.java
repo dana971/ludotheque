@@ -5,6 +5,9 @@ import lombok.*;
 
 import java.util.List;
 
+@Data
+@NoArgsConstructor
+@RequiredArgsConstructor
 @Entity
 @Table(name = "CLIENT")
 public class Client {
