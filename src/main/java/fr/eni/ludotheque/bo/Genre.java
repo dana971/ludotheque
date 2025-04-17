@@ -20,4 +20,8 @@ public class Genre {
     @Column(nullable = false, length = 50)
     private String libelle;
 
+    public Genre(int id, String libelle) {
+        this.id = id;
+        this.libelle = libelle;
+    }
 }

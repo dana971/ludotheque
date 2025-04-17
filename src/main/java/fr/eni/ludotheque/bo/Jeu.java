@@ -39,7 +39,7 @@ public class Jeu {
 
     @NonNull
     @Column(name = "tarif_jour", nullable = false)
-    private Integer tarifJour;
+    private float tarifJour;
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "JEUX_GENRES",
@@ -47,59 +47,13 @@ public class Jeu {
             inverseJoinColumns = @JoinColumn(name="genre_id"))
     private List<Genre> genre = new ArrayList<>();
 
-    public int getId() {
-        return id;
+    public void addGenre(Genre genre) {
+        if (!this.genre.contains(genre)) {
+            this.genre.add(genre);
+        }
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public @NonNull String getTitre() {
-        return titre;
-    }
-
-    public void setTitre(@NonNull String titre) {
-        this.titre = titre;
-    }
-
-    public @NonNull String getReference() {
-        return reference;
-    }
-
-    public void setReference(@NonNull String reference) {
-        this.reference = reference;
-    }
-
-    public Integer getAgeMin() {
-        return ageMin;
-    }
-
-    public void setAgeMin(Integer ageMin) {
-        this.ageMin = ageMin;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public Integer getDuree() {
-        return duree;
-    }
-
-    public void setDuree(Integer duree) {
-        this.duree = duree;
-    }
-
-    public @NonNull Integer getTarifJour() {
-        return tarifJour;
-    }
-
-    public void setTarifJour(@NonNull Integer tarifJour) {
-        this.tarifJour = tarifJour;
+    public boolean hasNoGenre() {
+        return this.genre.isEmpty();
     }
 }
