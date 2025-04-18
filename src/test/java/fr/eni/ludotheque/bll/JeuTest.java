@@ -31,7 +31,7 @@ public class JeuTest {
         jeuRepository.save(jeu);
 
         //Assert
-        assertThat(jeu.getNoJeu()).isFalse();
+        assertThat(jeu.hasNoGenre()).isFalse();
 
     }
 
