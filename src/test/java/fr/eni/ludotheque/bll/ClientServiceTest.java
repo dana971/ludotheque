@@ -1,6 +1,6 @@
 package fr.eni.ludotheque.bll;
 
-import fr.eni.ludotheque.bo.Addresse;
+import fr.eni.ludotheque.bo.Adresse;
 import fr.eni.ludotheque.bo.Client;
 import fr.eni.ludotheque.dal.ClientRepository;
 import org.junit.jupiter.api.DisplayName;
@@ -24,7 +24,7 @@ public class ClientServiceTest {
     @DisplayName("Test d'ajout d'un client")
     public void addClient(){
 
-        Addresse adresse = new Addresse(2,"Allée de Bagatelle","44800", "Saint-Herblain");
+        Adresse adresse = new Adresse(2,"Allée de Bagatelle","44800", "Saint-Herblain");
         Client client = new Client("LAPORTE","KEVIN","pinguchieur@pin.gu","0102030405", adresse);
 
         org.mockito.Mockito.doAnswer((invocation) -> {
