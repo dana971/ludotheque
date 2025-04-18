@@ -18,7 +18,7 @@ public class Jeu {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
     @NonNull
     @Column(nullable = false, length = 50)

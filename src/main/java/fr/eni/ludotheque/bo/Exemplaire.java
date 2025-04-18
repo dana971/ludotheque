@@ -14,7 +14,7 @@ import lombok.RequiredArgsConstructor;
 public class Exemplaire {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer noExemplaire;
+    private Integer id;
 
     @Column(length=13, nullable = false)
     @NonNull private String codebarre;
