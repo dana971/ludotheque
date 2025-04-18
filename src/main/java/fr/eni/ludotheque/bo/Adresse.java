@@ -7,7 +7,7 @@ import lombok.*;
 @NoArgsConstructor
 @RequiredArgsConstructor
 @Entity
-@Table(name = "ADDRESSE")
+@Table(name = "ADRESSE")
 public class Adresse {
 
     @Id
