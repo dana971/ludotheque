@@ -14,7 +14,7 @@ import lombok.RequiredArgsConstructor;
 public class Genre {
     @Id
     @GeneratedValue
-    private int id;
+    private Integer id;
 
     @NonNull
     @Column(nullable = false, length = 50)
